@@ -614,14 +614,14 @@ function toggleFilterBox() {
   if (!filterCollapsed) {
     personBox.style.display = "none";
     if (header) header.style.display = "none";  // ⭐ 전체도 숨김
-    panel.style.maxHeight = "60px";
+    panel.style.maxHeight = "auto";
     panel.style.minHeight = "60px";
     btn.innerHTML = "+";   // ⭐ 변경
     filterCollapsed = true;
   } else {
     personBox.style.display = "block";
     if (header) header.style.display = "block"; // ⭐ 다시 표시
-    panel.style.maxHeight = "60px";
+    panel.style.maxHeight = "auto";
     btn.innerHTML = "−";   // ⭐ 변경
     filterCollapsed = false;
   }
