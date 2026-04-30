@@ -25,12 +25,17 @@
     max-width: 400px !important;
     box-sizing: border-box;
 
-    max-height: 40px;
+    max-height: none;
     overflow-y: auto;
 
     border-radius: 12px 12px 0 0;
     z-index: 400;
   }
+}
+    #filterPanel.collapsed {
+  min-height: 40px;   /* 최소 두께 확보 */
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 #recommendToggleBtn {
   font-size: 15px;
@@ -118,7 +123,7 @@ font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 70%; !important;
-    max-height: 40px;
+    max-height: none;
     overflow-y: auto;
     background: white;
     z-index: 400;
@@ -634,12 +639,14 @@ function toggleFilterBox() {
 
   if (!filterCollapsed) {
     personBox.style.display = "none";
+    panel.classList.add("collapsed");
     if (header) header.style.display = "none";  // ⭐ 전체도 숨김
     panel.style.maxHeight = "40px";
     btn.innerHTML = "+";   // ⭐ 변경
     filterCollapsed = true;
   } else {
     personBox.style.display = "block";
+    panel.classList.remove("collapsed");
     if (header) header.style.display = "block"; // ⭐ 다시 표시
     panel.style.maxHeight = "60vh";
     btn.innerHTML = "−";   // ⭐ 변경
