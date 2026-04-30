@@ -534,7 +534,7 @@ box.innerHTML = `
   ${limitedRoute.map(x => `${x.name} (${x.dist})`).join("<br>") || "없음"}
 `;
 }
-</div>
+
 function getDistance(lat1, lon1, lat2, lon2) {
   const R = 6371;
   const dLat = (lat2 - lat1) * Math.PI/180;
@@ -614,13 +614,14 @@ function toggleFilterBox() {
   if (!filterCollapsed) {
     personBox.style.display = "none";
     if (header) header.style.display = "none";  // ⭐ 전체도 숨김
-    panel.style.maxHeight = "auto";
+    panel.style.maxHeight = "60px";
+    panel.style.minHeight = "60px";
     btn.innerHTML = "+";   // ⭐ 변경
     filterCollapsed = true;
   } else {
     personBox.style.display = "block";
     if (header) header.style.display = "block"; // ⭐ 다시 표시
-    panel.style.maxHeight = "60vh";
+    panel.style.maxHeight = "60px";
     btn.innerHTML = "−";   // ⭐ 변경
     filterCollapsed = false;
   }
