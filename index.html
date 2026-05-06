@@ -294,17 +294,15 @@ customers.forEach(c => {
 
   customerMarkers.push({ marker: marker, data: c });
 
-marker.bindPopup(`
-  <b>${c.name}</b><br>
-  ${c.company}<br>
-  ${c.person}<br>
-  ${c.address}<br>
-  ${c.industry}<br><br>
-  <button onclick="setStart(${c.lat}, ${c.lng})">출발</button>
-  <button onclick="setEnd(${c.lat}, ${c.lng})">도착</button>
-`, {
-  pane: 'topPopupPane'
-});
+  marker.bindPopup(`
+    <b>${c.name}</b><br>
+    ${c.company}<br>
+    ${c.person}<br>
+    ${c.address}<br>
+    ${c.industry}<br><br>
+    <button onclick="setStart(${c.lat}, ${c.lng})">출발</button>
+    <button onclick="setEnd(${c.lat}, ${c.lng})">도착</button>
+  `);
 
   marker.bindTooltip(`<b>${c.name}</b><br>${c.person}`, {
     direction: 'top',
