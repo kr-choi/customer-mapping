@@ -295,6 +295,7 @@ customers.forEach(c => {
   customerMarkers.push({ marker: marker, data: c });
 
   marker.bindPopup(`
+    <div class="custom-popup">
     <b>${c.name}</b><br>
     ${c.company}<br>
     ${c.person}<br>
