@@ -221,7 +221,8 @@ document.getElementById("passInput").addEventListener("keypress", function(e) {
 });
 
 var map = L.map('map').setView([37.5665, 126.9780], 12);
-  map.getPane('popupPane').style.zIndex = 9998;
+  map.createPane('topPopupPane');
+map.getPane('topPopupPane').style.zIndex = 9999;
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 var startPoint = null;
