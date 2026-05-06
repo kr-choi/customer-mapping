@@ -68,13 +68,7 @@ font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 .leaflet-routing-container {
   z-index: 3000 !important;
 }
-    .leaflet-pane.leaflet-popup-pane {
-  z-index: 9998 !important;
-}
 
-.leaflet-popup {
-  z-index: 9998 !important;
-}
     .recommend-title {
       font-weight: bold;
       margin-top: 8px;
@@ -227,6 +221,7 @@ document.getElementById("passInput").addEventListener("keypress", function(e) {
 });
 
 var map = L.map('map').setView([37.5665, 126.9780], 12);
+  map.getPane('popupPane').style.zIndex = 9998;
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 var startPoint = null;
