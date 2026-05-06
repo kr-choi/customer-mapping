@@ -44,7 +44,9 @@
 
     .start-label { background: #007bff; }
     .end-label { background: #dc3545; }
-
+.leaflet-popup {
+  z-index: 9998 !important;
+}
 .recommend-box {
   position: fixed !important;
   bottom: 20px !important;
@@ -73,9 +75,6 @@ font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
       margin-top: 8px;
       margin-bottom: 4px;
     }
-.leaflet-popup-pane {
-  z-index: 9998 !important;
-}
     .title-arrival { background: #74DB7B; }
     .title-route { background: #FFF280; color: black; }
 
@@ -295,7 +294,6 @@ customers.forEach(c => {
   customerMarkers.push({ marker: marker, data: c });
 
   marker.bindPopup(`
-    <div class="custom-popup">
     <b>${c.name}</b><br>
     ${c.company}<br>
     ${c.person}<br>
